@@ -32,6 +32,13 @@ import org.junit.Test;
             boolean result=userValidation.validateFirstName("Swrp");
             Assert.assertEquals(false,result);
         }
+
+        @Test
+        public void givenEmailId_WhenProper_ShouldReturnTrue() {
+            UserReg userValidation=new UserReg();
+            boolean result=userValidation.validateEmailId("shreyaswrp@gmail.com");
+            Assert.assertEquals(true,result);
+        }
     }
 
 
