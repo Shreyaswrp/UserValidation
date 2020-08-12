@@ -9,6 +9,7 @@ public class UserReg {
     private static final String PASSWORD_PATTERN1="^[A-Za-z0-9]{8,}";
     private static final String PASSWORD_PATTERN2="(?=.*[A-Z].*)[A-Za-z0-9]{8,}";
     private static final String PASSWORD_PATTERN3="(?=.*[A-Z].*)(?=.*[0-9].*)[A-Za-z0-9]{8,}";
+    private static final String PASSWORD_PATTERN4="(?=.*[A-Z].*)(?=.*[0-9].*)([a-zA-Z0-9]{4,}[!@#$%^&*()_+][a-zA-Z0-9]{3,})";
 
     public boolean validateFirstName(String firstName) {
         Pattern pattern=Pattern.compile(FIRST_NAME);
@@ -27,7 +28,7 @@ public class UserReg {
         return pattern.matcher(phoneNumber).matches();
     }
     public boolean validatePassword(String passsword) {
-        Pattern pattern=Pattern.compile(PASSWORD_PATTERN3);
+        Pattern pattern=Pattern.compile(PASSWORD_PATTERN4);
         return pattern.matcher(passsword).matches();
     }
 
